@@ -1,13 +1,12 @@
 ﻿#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include <CL/cl.h>
+#include <OpenCLRuntime.h>
 
 int main()
 {
-    std::cout << "test opencl" << std::endl;
-
-    cl_platform_id* platform;
+    OCL::OpenCLRuntime CLRT;
+ /*   cl_platform_id* platform;
     cl_uint num_platform;
     cl_int err, plat_florm_index = -1;
 
@@ -91,7 +90,7 @@ int main()
         free(version);
     }
 
-    free(platform);
+    free(platform);*/
 
     return 0;
 }

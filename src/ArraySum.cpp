@@ -62,8 +62,8 @@ int main()
 
     for (int i = 0; i < BUFSIZE; i++)
     {
-        buf1[i] = (float)(rand() % 65535);
-        buf2[i] = (float)(rand() % 65535);
+        buf1[i] = (rand() % 32767);
+        buf2[i] = (rand() % 32767);
     }
 
     time_start = GetTickCount64();
