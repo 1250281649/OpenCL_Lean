@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="源文件\tutorials">
+      <UniqueIdentifier>{0efca2cf-d237-4620-ad13-c01e7fb5f099}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\OpenCL_Learn.cpp">
@@ -21,10 +24,18 @@
     <ClCompile Include="..\src\core\OpenCLRuntime.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\ArraySum.cpp">
+      <Filter>源文件\tutorials</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\core\OpenCLRuntime.h">
       <Filter>头文件</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\add.cl">
+      <Filter>源文件\tutorials</Filter>
+    </None>
   </ItemGroup>
 </Project>

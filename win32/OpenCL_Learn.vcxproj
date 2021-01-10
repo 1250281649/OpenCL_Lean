@@ -19,11 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\ArraySum.cpp" />
     <ClCompile Include="..\src\core\OpenCLRuntime.cpp" />
     <ClCompile Include="..\src\OpenCL_Learn.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\core\OpenCLRuntime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\add.cl" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

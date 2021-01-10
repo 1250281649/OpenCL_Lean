@@ -11,7 +11,7 @@
 #include <CL/cl.hpp>
 
 namespace OCL {
-enum GpuType {
+enum class GpuType {
 		MALI = 0, 
 		NV = 1,
 		ADRENO = 2,
@@ -26,17 +26,29 @@ public:
 	OpenCLRuntime& operator=(const OpenCLRuntime&) = delete;
 
 	GpuType getGpuType();
+	bool isSupportedFP16();
+	cl::Context& context();
+	cl::CommandQueue& commandQueue();
+	uint64_t deviceGlobalMemoryCacheSize();
+	uint32_t deviceComputeUnits();
+	uint32_t maxFreq();
+	cl::Kernel buildKernel(const std::string& programName, const std::string& kernelName,
+		const std::set<std::string>& buildOptions);
+
+private:
+	bool loadProgram(const std::string& programName, cl::Program* program);
+	bool buildProgram(cl::Program* program, const std::string& buildOptions);
 
 private:
 	std::shared_ptr<cl::Context> mContext;
 	std::shared_ptr<cl::Device> mDevice; // default to the first device
 	std::shared_ptr<cl::CommandQueue> mCommandQueue;
-	uint64_t mGPUGlobalMemeryCacheSize;
-	uint32_t mGPUComputeUnits;
-	uint32_t mMaxFreq;
+	uint64_t mGPUGlobalMemeryCacheSize = 0;
+	uint32_t mGPUComputeUnits = 0;
+	uint32_t mMaxFreq = 0;
 	bool mIsSupportedFP16 = false;
 	std::map<std::pair<std::string, std::string>, cl::Program> mBuildProgram;
-	GpuType mGpuType;	// GPU type
+	GpuType mGpuType = GpuType::OTHER;	// GPU type
 	bool mIsCreateError{false};
 };
 
